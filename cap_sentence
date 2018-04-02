@@ -1,0 +1,42 @@
+def capitalized_Sentence(sentence):
+    keep_Going = True
+    while keep_Going:
+
+        if sentence.replace(" ", "").isalpha():
+            # keep_Going = False
+            return sentence.capitalize()
+        elif sentence.replace(" ", "").isalnum():
+            numbers = []
+            print("Please type alphabet letters")
+            for char in sentence:
+                if char.isnumeric():
+                    numbers.append(char)
+                    # numbers.sort()
+
+            print("You have the following number(s) in your sentence:", str(numbers))
+
+            #continue
+            #get_input()
+            sentence = get_input()
+            keep_Going = True
+        elif len(sentence) == 0:
+            print("You did not type a sentence ")
+            sentence = get_input()
+            keep_Going = True
+
+
+
+def get_input():
+    asked_sentence = str(input("Enter your sentence here: "))
+    return asked_sentence
+
+
+def main():
+    try:
+         sentence_Asked = get_input()
+         cap_sentence = capitalized_Sentence(sentence_Asked)
+         print("Capitalized sentence : ", cap_sentence)
+    except Exception:
+        print("Dont ")
+main()
+
